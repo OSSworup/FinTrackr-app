@@ -115,7 +115,7 @@ MONGODB_URL=your_mongo_uri
 JWT_SECRET=your_jwt_secret
 
 ### Install dependencies
-git clone https://github.com/your-username/mern-finance-planner.git
+git clone [https://github.com/your-username/mern-finance-planner](https://github.com/OSSworup/mern-finance-planner).git
 cd mern-finance-planner
 
 npm install           # installs root dependencies (concurrently)
