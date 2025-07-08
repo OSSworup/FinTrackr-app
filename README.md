@@ -103,12 +103,12 @@ Basic user info + hashed password
 ```
 
 ## Running Locally
-## Prerequisites
+Prerequisites
 
 Node.js + npm
 MongoDB URI (MongoDB Atlas or local)
 
-Environment Variables
+## Environment Variables
 
 In server/.env:
 
@@ -130,7 +130,7 @@ cd ../server && npm install
 
 cd ..
 
-### Run the Full App
+## Run the Full App
 
 npm run dev
 
@@ -153,7 +153,7 @@ Cron was set to run every minute (* * * * *)
 Logs confirmed correct insertions
 After testing, reverted to production schedule (5 0 * * *)
 
-👤 Author
+## 👤 Author
 Omm Subham Sworup Ojha  
 
 BSc Computer Science Graduate
