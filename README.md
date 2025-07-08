@@ -102,32 +102,43 @@ Basic user info + hashed password
 }
 ```
 
-Running Locally
-Prerequisites
+## Running Locally
+## Prerequisites
 
 Node.js + npm
 MongoDB URI (MongoDB Atlas or local)
 
 Environment Variables
+
 In server/.env:
+
 MONGODB_URL=your_mongo_uri
+
 JWT_SECRET=your_jwt_secret
 
-Install Dependencies
+## Install Dependencies
+
 git clone https://github.com/OSSworup/mern-finance-planner.git
+
 cd mern-finance-planner
+
 npm install           # Installs root dependencies (concurrently)
+
 cd client && npm install
+
 cd ../server && npm install
+
 cd ..
 
-Run the Full App
+### Run the Full App
+
 npm run dev
 
-Cron Job Logic
+## Cron Job Logic
 
 Uses node-cron
 Scheduled to run: 5 0 * * * (12:05 AM UTC every day)
+
 On match date:
 Creates a normal transaction
 Updates lastRun to prevent duplicate processing
@@ -135,7 +146,7 @@ Uses UTC date matching to avoid timezone issues
 
 
 
-Testing
+## Testing
 During testing:
 
 Cron was set to run every minute (* * * * *)
@@ -145,5 +156,6 @@ After testing, reverted to production schedule (5 0 * * *)
 👤 Author
 Omm Subham Sworup Ojha  
 
-BSc Computer Science Graduate  
+BSc Computer Science Graduate
+
 Aspiring Full-Stack Web Developer
