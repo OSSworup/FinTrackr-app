@@ -8,10 +8,24 @@ import db from './utils/db.js';
 import bodyParser from 'body-parser';
 app.use(bodyParser.json());
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://mern-finance-planner-frontend.onrender.com'
+];
+
 app.use(cors({
-    origin: 'http://localhost:5173', 
-  credentials: true 
-}))
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like curl or Postman)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error('Not allowed by CORS'));
+  },
+  credentials: true
+}));
 
 import "./cron/recurringRunner.js";
 
