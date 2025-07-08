@@ -15,6 +15,8 @@ app.use(cors({
 
 import "./cron/recurringRunner.js";
 
+const port=process.env.PORT || 4000;
+
 import userRoute from './routes/userRoute.js'
 app.use('/user',userRoute);
 
@@ -28,6 +30,6 @@ app.get('/',(req,res)=>{
     res.send("Expense Tracker & Forcast Web application")
 })
 
-app.listen(4000,()=>{
+app.listen(port,()=>{
     console.log('Listening to port 4000')
 });
