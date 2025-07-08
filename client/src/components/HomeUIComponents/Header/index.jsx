@@ -4,8 +4,8 @@ function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="flex flex-col md:flex-row justify-between items-center px-6 py-4 fixed top-0 left-0 right-0 bg-white shadow z-10 space-y-2 md:space-y-0">
-      <h1 className="text-xl md:text-2xl font-bold text-green-700 text-center md:text-left">
+    <header className="flex justify-between items-center px-6 py-4 fixed top-0 left-0 right-0 bg-white shadow z-10 h-20">
+      <h1 className="text-xl md:text-2xl font-bold text-green-700">
         Finance Planner
       </h1>
 
@@ -28,4 +28,6 @@ function Header() {
 }
 
 export default Header;
+
+
 
