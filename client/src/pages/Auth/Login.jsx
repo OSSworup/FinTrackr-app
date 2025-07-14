@@ -8,17 +8,22 @@ function Login() {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const { login } = useContext(AuthContext);
   const [apiError, setApiError] = useState(null);
+  const [loading, setLoading] = useState(false); // ⬅️ loading state
   const navigate = useNavigate();
 
   async function onSubmit(data) {
+    setLoading(true);
+    setApiError(null);
     try {
-      const res =await api.post('/user/login', data);
+      const res = await api.post('/user/login', data);
       login(res.data.token);
       navigate('/dashboard');
       reset();
     } catch (error) {
       console.log(error);
-      setApiError(error.response?.data.error || "server Error");
+      setApiError(error.response?.data.error || "Server Error");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -40,6 +45,7 @@ function Login() {
               className={`w-full border ${
                 errors.email ? "border-red-500" : "border-blue-700"
               } p-2 rounded focus:outline-none focus:ring-2 focus:ring-green-700`}
+              disabled={loading}
             />
             {errors.email && (
               <span className="text-sm text-red-500">{errors.email.message}</span>
@@ -59,6 +65,7 @@ function Login() {
               className={`w-full border ${
                 errors.password ? "border-red-500" : "border-blue-700"
               } p-2 rounded focus:outline-none focus:ring-2 focus:ring-green-700`}
+              disabled={loading}
             />
             {errors.password && (
               <span className="text-sm text-red-500">{errors.password.message}</span>
@@ -67,15 +74,20 @@ function Login() {
 
           <button
             type="submit"
-            className="w-full bg-green-700 text-white py-2 rounded hover:bg-green-900 transition"
+            disabled={loading}
+            className={`w-full py-2 rounded transition text-white ${
+              loading
+                ? "bg-green-400 cursor-not-allowed"
+                : "bg-green-700 hover:bg-green-900"
+            }`}
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
 
           {apiError && <p className="text-red-600 text-center text-sm">{apiError}</p>}
-          
+
           <p className="text-center text-gray-700 text-sm">
-            Don't have an account?{' '}
+            Don't have an account?{" "}
             <Link to="/signup" className="text-green-700 hover:underline font-medium">
               Sign up
             </Link>
