@@ -1,81 +1,74 @@
-# 💰 MERN Finance Planner
+### 💰 FinTrackr
+A full-stack personal finance planner built with the MERN stack (MongoDB, Express, React, Node.js).Track your income, expenses, and automate recurring transactions with a clean dashboard UI and powerful backend logic.
 
-A full-stack personal finance planner built with the MERN stack (MongoDB, Express, React, Node.js).  
-Track your income, expenses, and automate recurring transactions with a clean dashboard UI and powerful backend logic.
+Built by Omm Subham Sworup Ojha
 
-> Built by **Omm Subham Sworup Ojha**
 
----
-
-## 🚀 Features
-
+### 🚀 Features
 ### ✅ Core Functionality
-- User authentication using JWT & bcrypt
-- Add, edit, and delete income and expense transactions
-- Balance summary and transaction history
-- Automatic handling of recurring transactions via backend cron job
-- Secure user-specific data isolation
+
+User authentication using JWT & bcrypt
+Add, edit, and delete income and expense transactions
+Balance summary and transaction history
+Automatic handling of recurring transactions via backend cron job
+Secure user-specific data isolation
 
 ### 🔁 Recurring Transactions
-- Add recurring transactions (Daily / Weekly / Monthly)
-- Stored in a separate collection (`recurringTransaction`)
-- Backend cron job (node-cron) runs daily at **12:05 AM UTC**
-- Automatically creates normal transactions on their scheduled dates
-- `lastRun` field prevents duplicate entries
+
+Add recurring transactions (Daily / Weekly / Monthly)
+Stored in a separate collection (recurringTransaction)
+Backend cron job (node-cron) runs daily at 12:05 AM UTC
+Automatically creates normal transactions on their scheduled dates
+lastRun field prevents duplicate entries
 
 ### 🧠 Planned Features
-- Forecast future balance
-- Filter and sort transactions
-- Graphs & charts for spending visualization
 
----
+Forecast future balance
+Filter and sort transactions
+Graphs & charts for spending visualization
 
-## 🧱 Tech Stack
 
+### 🧱 Tech Stack
 ### Frontend
-- **React 19** with **Vite**
-- TailwindCSS
-- React Query (`@tanstack/react-query`)
-- React Hook Form
-- Axios
-- Lucide Icons + React Icons
-- React Router DOM
+
+React 19 with Vite
+TailwindCSS
+React Query (@tanstack/react-query)
+React Hook Form
+Axios
+Lucide Icons + React Icons
+React Router DOM
 
 ### Backend
-- **Node.js + Express 5**
-- MongoDB with Mongoose
-- JWT Auth + bcrypt for password hashing
-- node-cron for background recurring logic
-- dotenv, CORS, nodemon
 
----
+Node.js + Express 5
+MongoDB with Mongoose
+JWT Auth + bcrypt for password hashing
+node-cron for background recurring logic
+dotenv, CORS, nodemon
 
-## 🖼 Dashboard UI Components
 
-- `Header` – Logout + App Name
-- `BalanceCard` – Shows total current balance
-- `TransactionForm` – Add/edit normal transactions
-- `TransactionTable` – View, edit, delete normal transactions
-- `RecurringTable` – View, edit, delete recurring transactions
+### 🖼 Dashboard UI Components
 
----
+Header – Logout + App Name
+BalanceCard – Shows total current balance
+TransactionForm – Add/edit normal transactions
+TransactionTable – View, edit, delete normal transactions
+RecurringTable – View, edit, delete recurring transactions
 
-## 🔐 Authentication
 
-- User registration and login with secure JWT tokens
-- Passwords are hashed using bcrypt
-- Frontend stores the token in `localStorage`
-- All protected routes verify token on frontend and backend
+### 🔐 Authentication
 
----
+User registration and login with secure JWT tokens
+Passwords are hashed using bcrypt
+Frontend stores the token in localStorage
+All protected routes verify token on frontend and backend
 
-## 🗃 Database Models
 
-### User
+### 🗃 Database Models
+User
 Basic user info + hashed password
-
-### Transaction
-```js
+Transaction
 {
   userID,
   label,
@@ -85,11 +78,7 @@ Basic user info + hashed password
   sourceRecurring: optional,
 }
 
-```
-### Recurring Transaction
-
-```js
-
+Recurring Transaction
 {
   userID,
   label,
@@ -100,62 +89,66 @@ Basic user info + hashed password
   endDate: optional,
   lastRun: optional
 }
-```
 
-## Running Locally
+
+### 🌐 Deployment
+FinTrackr is deployed and accessible online. Visit the live application to explore its features!
+
+### 📄 Additional Pages
+
+About Me: Learn more about the developer, Omm Subham Sworup Ojha, and the inspiration behind FinTrackr.
+Contact: Reach out via a Web3 form for feedback, inquiries, or collaboration opportunities.
+
+
+### 🏃‍♂️ Running Locally
 Prerequisites
 
 Node.js + npm
 MongoDB URI (MongoDB Atlas or local)
 
-## Environment Variables
-
+### Environment Variables
+```javascript
 In server/.env:
-
 MONGODB_URL=your_mongo_uri
-
 JWT_SECRET=your_jwt_secret
+```
 
-## Install Dependencies
+### Install Dependencies
 
 git clone https://github.com/OSSworup/mern-finance-planner.git
-
 cd mern-finance-planner
-
 npm install           # Installs root dependencies (concurrently)
-
 cd client && npm install
-
 cd ../server && npm install
-
 cd ..
 
-## Run the Full App
-
+Run the Full App
 npm run dev
 
-## Cron Job Logic
+
+### ⏰ Cron Job Logic
 
 Uses node-cron
 Scheduled to run: 5 0 * * * (12:05 AM UTC every day)
-
 On match date:
 Creates a normal transaction
 Updates lastRun to prevent duplicate processing
+
+
 Uses UTC date matching to avoid timezone issues
 
-
-
-## Testing
+### Testing
 During testing:
 
 Cron was set to run every minute (* * * * *)
 Logs confirmed correct insertions
 After testing, reverted to production schedule (5 0 * * *)
 
-## 👤 Author
+
+### 👤 Author
 Omm Subham Sworup Ojha  
 
-BSc Computer Science Graduate
+BSc Computer Science Graduate  
+Aspiring Full-Stack Web Developer  
+Contact: Use the Contact page on the deployed app or connect via GitHub
 
-Aspiring Full-Stack Web Developer

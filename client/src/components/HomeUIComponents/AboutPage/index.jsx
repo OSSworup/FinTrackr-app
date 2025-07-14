@@ -10,11 +10,11 @@ export default function AboutPage() {
         About Me
       </h1>
       <p className="text-center max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-        <span className="font-semibold">Hey, I’m Omm Subham Sworup Ojha</span> — a Computer Science graduate and full-stack web developer in the making.  
+        <span className="font-semibold">Hello, I’m Omm Subham Sworup Ojha</span> — a Computer Science graduate with a focus on full-stack web development.  
         <br />
-        This Finance Planner was built from scratch using the <span className="font-medium text-[#2E7D32]">MERN stack</span> as part of my personal roadmap to becoming job-ready.
+        This Finance Planner application was developed independently using the <span className="font-medium text-[#2E7D32]">MERN stack</span> as part of my hands-on learning journey to becoming industry-ready.
         <br /><br />
-        It’s more than just a project — it’s proof that I can turn ideas into clean, functional, and scalable code.
+        It’s not just a technical project — it reflects my ability to design, build, and deploy scalable web applications from the ground up.
       </p>
 
       <div className="flex justify-center mb-10">
@@ -29,19 +29,19 @@ export default function AboutPage() {
         <div className="px-4">
           <h2 className="text-xl font-bold text-[#2E7D32] mb-2 uppercase tracking-wide">Why I Built This</h2>
           <p className="text-gray-700 leading-relaxed text-base">
-            To level up my backend skills, understand real-world auth, and automate logic with cron jobs — no tutorials, no shortcuts.
+            I built this to sharpen my full-stack skills — covering backend auth, frontend state management, and form handling with tools like TanStack Query and React Hook Form.
           </p>
         </div>
         <div className="px-4">
           <h2 className="text-xl font-bold text-[#2E7D32] mb-2 uppercase tracking-wide">Stack + Tools</h2>
           <p className="text-gray-700 leading-relaxed text-base">
-            MERN, Tailwind, React Query, node-cron — with help from AI like ChatGPT and Grok for debugging and brainstorming.
+            Built using MERN, styled with Tailwind CSS, and enhanced with tools like React Query and node-cron. AI tools such as ChatGPT and Grok supported debugging and ideation.
           </p>
         </div>
         <div className="px-4">
           <h2 className="text-xl font-bold text-[#2E7D32] mb-2 uppercase tracking-wide">What’s Next</h2>
           <p className="text-gray-700 leading-relaxed text-base">
-            I’m actively seeking <span className="font-medium text-[#2E7D32]">junior developer roles</span> — ready to build, learn, and grow in a team environment.
+            I’m currently exploring <span className="font-medium text-[#2E7D32]">junior developer opportunities</span> where I can contribute meaningfully, collaborate with experienced teams, and continue growing professionally.
           </p>
         </div>
       </div>
@@ -60,4 +60,5 @@ export default function AboutPage() {
     </div>
   );
 }
+
 

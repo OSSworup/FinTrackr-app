@@ -10,7 +10,7 @@ function Header() {
   const isLoggedIn = !!Auth?.token;
 
   return (
-    <header className="flex justify-between items-center px-4 py-3 fixed top-0 left-0 right-0 bg-white shadow z-10 h-16">
+    <header className="flex justify-between items-center px-4 py-3 fixed top-0 left-0 right-0 bg-white shadow z-10 h-16 select-none">
       <div className="flex items-center gap-2">
         <BarChart2 className="text-[#2E7D32] w-5 h-5" />
         <h1

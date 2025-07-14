@@ -9,19 +9,23 @@ import ProtectedRoute from './components/components/ProtectedRoute';
 import AboutPage from './components/HomeUIComponents/AboutPage';
 import ContactPage from './components/HomeUIComponents/Contact';
 import PrivacyPolicy from './components/HomeUIComponents/PrivacyPolicy';
+import ScrollToTop from './components/components/ScrollToTop';
 
 function App() {
 
-  return <Routes>
-    <Route path="/" element={<Home/>} />
-    <Route path="/signup" element={<Signup/>} />
-    <Route path="/login" element={<Login/>} />
-    <Route path="/about" element={<AboutPage/>} />
-    <Route path="/contact" element={<ContactPage/>} />
-    <Route path="/privacy" element={<PrivacyPolicy/>} />
-    <Route path="/dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
-    {/* <Route path="/forecast-dashboard" element={<ProtectedRoute><Forecast/></ProtectedRoute>} /> */}
-  </Routes>
+  return <>
+    <ScrollToTop/>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/signup" element={<Signup/>} />
+      <Route path="/login" element={<Login/>} />
+      <Route path="/about" element={<AboutPage/>} />
+      <Route path="/contact" element={<ContactPage/>} />
+      <Route path="/privacy" element={<PrivacyPolicy/>} />
+      <Route path="/dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>} />
+      {/* <Route path="/forecast-dashboard" element={<ProtectedRoute><Forecast/></ProtectedRoute>} /> */}
+    </Routes>
+  </>
 }
 
 export default App;
