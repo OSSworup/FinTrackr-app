@@ -1,12 +1,24 @@
 import RecurringTransaction from "../models/recurringTransaction.js";
 
+
+function adjustToISTMidnight(dateStr) {
+  const d = new Date(dateStr); // e.g. "2025-07-20"
+  // Convert to UTC date that represents IST midnight
+  return new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) - (5.5 * 60 * 60 * 1000));
+}
+
+
 export const addRecurringTransaction=async (req,res)=>{
     try{
         const user=req.user;
         const data=req.body;
+
+        const adjustedStartDate=adjustToISTMidnight(data.StartDate);
+
         const newRecurringTransaction=new RecurringTransaction({
             userID:user.id,
-            ...data
+            ...data,
+            StartDate:adjustedStartDate
         });
 
         const response=await newRecurringTransaction.save();
