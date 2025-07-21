@@ -135,20 +135,20 @@ npm run dev
 ### ⏰ Cron Job Logic
 
 Uses node-cron
-Scheduled to run: 5 0 * * * (12:05 AM UTC every day)
+Scheduled to run: 5 0 * * * (12:05 AM IST every day)
 On match date:
 Creates a normal transaction
 Updates lastRun to prevent duplicate processing
 
 
-Uses UTC date matching to avoid timezone issues
+Uses IST date matching to avoid timezone issues
 
 ### Testing
 During testing:
 
 Cron was set to run every minute (* * * * *)
 Logs confirmed correct insertions
-After testing, reverted to production schedule (5 0 * * *)
+After testing, reverted to production schedule (35 18 * * *) to match 12.05 am IST as Render uses UTC.
 
 
 ### 👤 Author
