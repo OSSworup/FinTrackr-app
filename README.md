@@ -115,14 +115,20 @@ JWT_SECRET=your_jwt_secret
 
 ### Install Dependencies
 
-git clone https://github.com/OSSworup/mern-finance-planner.git
+# git clone https://github.com/OSSworup/mern-finance-planner.git
+
 cd mern-finance-planner
+
 npm install           # Installs root dependencies (concurrently)
+
 cd client && npm install
+
 cd ../server && npm install
+
 cd ..
 
 Run the Full App
+
 npm run dev
 
 
