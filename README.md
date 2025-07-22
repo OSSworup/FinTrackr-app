@@ -5,7 +5,7 @@ Built by Omm Subham Sworup Ojha
 
 
 ### 🚀 Features
-### ✅ Core Functionality
+# ✅ Core Functionality
 
 User authentication using JWT & bcrypt
 Add, edit, and delete income and expense transactions
@@ -13,7 +13,7 @@ Balance summary and transaction history
 Automatic handling of recurring transactions via backend cron job
 Secure user-specific data isolation
 
-### 🔁 Recurring Transactions
+# 🔁 Recurring Transactions
 
 Add recurring transactions (Daily / Weekly / Monthly)
 Stored in a separate collection (recurringTransaction)
@@ -21,7 +21,7 @@ Backend cron job (node-cron) runs daily at 12:05 AM UTC
 Automatically creates normal transactions on their scheduled dates
 lastRun field prevents duplicate entries
 
-### 🧠 Planned Features
+# 🧠 Planned Features
 
 Forecast future balance
 Filter and sort transactions
@@ -29,7 +29,7 @@ Graphs & charts for spending visualization
 
 
 ### 🧱 Tech Stack
-### Frontend
+# Frontend
 
 React 19 with Vite
 TailwindCSS
@@ -39,7 +39,7 @@ Axios
 Lucide Icons + React Icons
 React Router DOM
 
-### Backend
+# Backend
 
 Node.js + Express 5
 MongoDB with Mongoose
@@ -48,7 +48,7 @@ node-cron for background recurring logic
 dotenv, CORS, nodemon
 
 
-### 🖼 Dashboard UI Components
+# 🖼 Dashboard UI Components
 
 Header – Logout + App Name
 BalanceCard – Shows total current balance
@@ -93,6 +93,7 @@ Recurring Transaction
 
 ### 🌐 Deployment
 FinTrackr is deployed and accessible online. Visit the live application to explore its features!
+
 [Link} (https://mern-finance-planner-frontend.onrender.com)
 
 ### 📄 Additional Pages
@@ -108,8 +109,8 @@ Node.js + npm
 MongoDB URI (MongoDB Atlas or local)
 
 ### Environment Variables
-```javascript
 In server/.env:
+```javascript
 MONGODB_URL=your_mongo_uri
 JWT_SECRET=your_jwt_secret
 ```
@@ -117,20 +118,14 @@ JWT_SECRET=your_jwt_secret
 ### Install Dependencies
 
 # git clone https://github.com/OSSworup/mern-finance-planner.git
-
+```
 cd mern-finance-planner
-
-npm install           # Installs root dependencies (concurrently)
-
+npm install
 cd client && npm install
-
 cd ../server && npm install
-
 cd ..
-
-Run the Full App
-
 npm run dev
+```
 
 
 ### ⏰ Cron Job Logic
