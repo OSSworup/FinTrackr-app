@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url="https://mern-finance-planner.onrender.com";
+const url="https://fintrackr-app-0sxh.onrender.com";
 
 const api = axios.create({ baseURL: url });
 
