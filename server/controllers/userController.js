@@ -32,12 +32,8 @@ export async function login(req,res){
         const {email,password}=req.body;
         const user=await User.findOne({email:email});
 
-        if (!user) {
-            return res.status(404).json({ error: "User not found" });
-        }
-        
-        if (!(await user.comparePassword(password))) {
-            return res.status(401).json({ error: "Incorrect password" });
+        if(!user || !(await user.comparePassword(password))){
+            return res.status(401).json({error:"Invalid user or password"});
         }
 
         const payload={
