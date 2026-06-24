@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://mern-finance-planner-frontend.onrender.com'
+  'https://fin-trackr-app-weld.vercel.app'
 ];
 
 app.use(cors({
